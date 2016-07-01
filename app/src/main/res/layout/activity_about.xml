@@ -7,6 +7,32 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.guest.nr_studyapp.AboutActivity">
+    tools:context="com.example.guest.nr_studyapp.AboutActivity"
+    android:background="@drawable/about">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="ABOUT"
+        android:id="@+id/textView"
+        android:textColor="#FFF"
+        android:textSize="70sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Made by an EMT for EMTs. This app was designed to help you ace that National Registry exam and get to doing the job you love faster. You can never be too prepared in this career field."
+        android:id="@+id/textView2"
+        android:textColor="#FFF"
+        android:layout_alignParentBottom="true"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
