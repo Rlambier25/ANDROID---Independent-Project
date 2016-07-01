@@ -7,15 +7,57 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.guest.nr_studyapp.MainActivity">
+    tools:context="com.example.guest.nr_studyapp.MainActivity"
+    android:background="@drawable/background"
+    android:focusable="false"
+    android:focusableInTouchMode="false">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NR-EMT"
-        android:layout_marginTop="101dp"
-        android:textSize="50sp"
-        android:layout_alignParentTop="true"
+        android:textSize="80sp"
+        android:textStyle="bold"
+        android:id="@+id/appNameTextView"
+        android:textColor="@color/abc_primary_text_disable_only_material_dark"
+        android:layout_below="@+id/logInButton"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="flashcards"
+        android:id="@+id/flashCardButton"
+        android:textStyle="bold"
+        android:background="#00e6ebd9"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="45sp"
+        android:layout_below="@+id/appNameTextView"
+        android:layout_alignRight="@+id/appNameTextView"
+        android:layout_alignEnd="@+id/appNameTextView"
+        android:layout_marginTop="124dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="about"
+        android:id="@+id/aboutButton"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:background="#00e6ebd9"
+        android:textSize="30sp"
+        android:layout_below="@+id/flashCardButton"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold" />
+        android:layout_marginTop="40dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log In"
+        android:id="@+id/logInButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#00e6ebd9"
+        android:textColor="@color/abc_primary_text_material_dark" />
 </RelativeLayout>
