@@ -1,5 +1,6 @@
 package com.example.guest.nr_studyapp;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,10 +13,10 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-//    @Bind(R.id.logInButton) Button mLogInButton;
+    @Bind(R.id.logInButton) Button mLogInButton;
     @Bind(R.id. appNameTextView) TextView mAppNameTextView;
     @Bind(R.id.aboutButton) Button mAboutButton;
-//    @Bind(R.id.flashCardButton) Button mFlashCardButton;
+    @Bind(R.id.flashCardButton) Button mFlashCardButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +29,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAppNameTextView.setTypeface(captureFont);
 
         mAboutButton.setOnClickListener(this);
+        mLogInButton.setOnClickListener(this);
+        mFlashCardButton.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
         if(v == mAboutButton) {
-            Toast.makeText(MainActivity.this, "Hey there lil fella!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+            startActivity(intent);
+        }
+        if(v == mLogInButton) {
+            Intent goToLogin = new Intent(MainActivity.this, logInActivity.class);
+            startActivity(goToLogin);
+        }
+        if(v == mFlashCardButton) {
+            Intent goToFlashCards = new Intent(MainActivity.this, FlashCardActivity.class);
+            startActivity(goToFlashCards);
         }
     }
 }

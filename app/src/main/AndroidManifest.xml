@@ -15,6 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".logInActivity" />
+        <activity android:name=".FlashCardActivity"></activity>
     </application>
 
 </manifest>
