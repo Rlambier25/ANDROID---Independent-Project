@@ -33,7 +33,7 @@ public class logInActivity extends AppCompatActivity implements View.OnClickList
         if (v == mlogInButton) {
             String user = mlogInUserName.getText().toString();
             String password = mpassWordLogIn.getText().toString();
-//            Log.d(TAG, user);
+//            Log.d(TAG, user); left these for future use.
 //            Log.d(TAG, password);
             Intent intent = new Intent(logInActivity.this, MainActivity.class);
             intent.putExtra("user", user);
