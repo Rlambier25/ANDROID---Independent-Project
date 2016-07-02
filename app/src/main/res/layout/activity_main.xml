@@ -21,7 +21,8 @@
         android:id="@+id/appNameTextView"
         android:textColor="@color/abc_primary_text_disable_only_material_dark"
         android:layout_below="@+id/logInButton"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:paddingTop="40dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -32,10 +33,8 @@
         android:background="#00e6ebd9"
         android:textColor="@color/abc_primary_text_material_dark"
         android:textSize="45sp"
-        android:layout_below="@+id/appNameTextView"
-        android:layout_alignRight="@+id/appNameTextView"
-        android:layout_alignEnd="@+id/appNameTextView"
-        android:layout_marginTop="124dp" />
+        android:layout_above="@+id/aboutButton"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -45,9 +44,9 @@
         android:textColor="@color/abc_primary_text_material_dark"
         android:background="#00e6ebd9"
         android:textSize="30sp"
-        android:layout_below="@+id/flashCardButton"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+        android:textStyle="bold" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -59,18 +58,20 @@
         android:textColor="@color/abc_primary_text_material_dark"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/appNameTextView"
-        android:layout_alignEnd="@+id/appNameTextView" />
+        android:layout_alignEnd="@+id/appNameTextView"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=""
+        android:hint="please log in"
         android:id="@+id/userMain"
         android:layout_alignBottom="@+id/logInButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textColor="#FFF"
         android:textSize="17sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColorHint="#FFF" />
 </RelativeLayout>

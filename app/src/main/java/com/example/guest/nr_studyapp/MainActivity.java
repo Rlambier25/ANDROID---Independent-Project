@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Intent intent = getIntent();
         String user = intent.getStringExtra("user");
-        mUserTextView.setText("Welcome " + user);
+        mUserTextView.setText(user);
 
         mAboutButton.setOnClickListener(this);
         mLogInButton.setOnClickListener(this);
