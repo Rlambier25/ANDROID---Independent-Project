@@ -17,21 +17,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id. appNameTextView) TextView mAppNameTextView;
     @Bind(R.id.aboutButton) Button mAboutButton;
     @Bind(R.id.flashCardButton) Button mFlashCardButton;
+    @Bind(R.id.userMain) TextView mUserTextView;
+    public static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         ButterKnife.bind(this);
 
         Typeface captureFont = Typeface.createFromAsset(getAssets(), "fonts/Capture_it.ttf");
         mAppNameTextView.setTypeface(captureFont);
 
+        mUserTextView = (TextView) findViewById(R.id.userMain);
+
+        Intent intent = getIntent();
+        String user = intent.getStringExtra("user");
+        mUserTextView.setText("Welcome " + user);
+
         mAboutButton.setOnClickListener(this);
         mLogInButton.setOnClickListener(this);
         mFlashCardButton.setOnClickListener(this);
     }
+
     @Override
     public void onClick(View v) {
         if(v == mAboutButton) {

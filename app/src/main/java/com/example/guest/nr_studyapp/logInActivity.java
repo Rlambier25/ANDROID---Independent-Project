@@ -1,5 +1,6 @@
 package com.example.guest.nr_studyapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,8 +33,11 @@ public class logInActivity extends AppCompatActivity implements View.OnClickList
         if (v == mlogInButton) {
             String user = mlogInUserName.getText().toString();
             String password = mpassWordLogIn.getText().toString();
-            Log.d(TAG, user);
-            Log.d(TAG, password);
+//            Log.d(TAG, user);
+//            Log.d(TAG, password);
+            Intent intent = new Intent(logInActivity.this, MainActivity.class);
+            intent.putExtra("user", user);
+            startActivity(intent);
             Toast.makeText(logInActivity.this, "check console", Toast.LENGTH_LONG).show();
         }
     }
