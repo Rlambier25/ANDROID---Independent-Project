@@ -43,22 +43,22 @@ public class FlashCardService {
         call.enqueue(callback);
     }
 
-    public ArrayList<Term> processResults(Response response) {
-        ArrayList<Term> terms = new ArrayList<>();
+    public ArrayList<FlashCard> processResults(Response response) {
+        ArrayList<FlashCard> deck = new ArrayList<>();
 
         try {
             String jsonData = response.body().string();
             if (response.isSuccessful()) {
                 JSONObject quizletJSON = new JSONObject(jsonData);
-                JSONArray termsJSON = quizletJSON.getJSONArray("terms");
-                for (int i = 0; i < termsJSON.length(); i++) {
-                    JSONObject termJSON = termsJSON.getJSONObject(i);
-                    String term = termJSON.getString("term");
-                    String definition = termJSON.getString("defintion");
-                    String rank = termJSON.getString("rank");
+                JSONArray vocabJSON = quizletJSON.getJSONArray("vocab");
+                for (int i = 0; i < vocabJSON.length(); i++) {
+                    JSONObject cardJSON = vocabJSON.getJSONObject(i);
+                    String term = cardJSON.getString("term");
+                    String definition = cardJSON.getString("defintion");
+                    String rank = cardJSON.getString("rank");
 
-                    Term term = new Term(term, definition, rank);
-                    terms.add(term);
+                    FlashCard card = new FlashCard(term, definition, rank);
+                    deck.add(card);
                 }
             }
         } catch (IOException e) {
@@ -66,6 +66,10 @@ public class FlashCardService {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return terms;
+        return deck;
     }
 }
+
+//vocab = JSON ARRAY
+//deck = arraylist
+//FlashCard = card --> item
