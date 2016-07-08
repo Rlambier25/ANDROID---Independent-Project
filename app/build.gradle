@@ -19,6 +19,7 @@ android {
     }
     buildTypes.each {
         it.buildConfigField 'String', 'QUIZLET_CONSUMER_KEY', QuizletConsumerKey
+        it.buildConfigField 'String', 'QUIZLET_CLIENT_ID', QuizletClientId
     }
 }
 

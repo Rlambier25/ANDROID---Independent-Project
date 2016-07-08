@@ -37,9 +37,6 @@
                 android:value="com.example.guest.nr_studyapp.MainActivity">
             </meta-data>
         </activity>
-        <!--<activity android:name=".AboutActivity" />-->
-        <!--<activity android:name=".logInActivity" />-->
-        <!--<activity android:name=".FlashCardActivity"></activity>-->
     </application>
 
 </manifest>
