@@ -10,6 +10,11 @@
     tools:context="com.example.guest.nr_studyapp.FlashCardActivity"
     android:background="#873a65f2">
 
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerView"/>
+
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
