@@ -37,10 +37,12 @@ import okhttp3.Response;
 //}
 
 public class FlashCardActivity extends AppCompatActivity {
-    private ListView mFlashCards;
+
+    @Bind(R.id.flashCards) ListView mFlashCards;
     public static final String TAG = FlashCardActivity.class.getSimpleName();
 
-    @Bind(R.id.flashCards) TextView mflashCards;
+//    @Bind(R.id.flashCards) TextView mflashCards;
+
 
     public ArrayList<FlashCard> mCards = new ArrayList<>();
 
@@ -50,10 +52,9 @@ public class FlashCardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flash_card);
-        mFlashCards = (ListView) findViewById(R.id.flashCards);
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, flashcards);
-        mFlashCards.setAdapter(adapter);
-
+//        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, flashcards);
+//        mFlashCards.setAdapter(adapter);
+            ButterKnife.bind(this);
             getTerms();
 
 
@@ -76,14 +77,24 @@ public class FlashCardActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    String jsonData = response.body().string();
-                    Log.v(TAG, jsonData);
-                    mCards = flashCardService.processResults(response);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            public void onResponse(Call call, Response response)  {
+                mCards = flashCardService.processResults(response);
+
+                FlashCardActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String[] cardCategories = new String[mCards.size()];
+                        for (int i = 0; i < cardCategories.length; i++) {
+                            cardCategories[i] = mCards.get(i).getTerm();
+                        }
+
+                            ArrayAdapter adapter = new ArrayAdapter(FlashCardActivity.this,
+                                    android.R.layout.simple_expandable_list_item_1, cardCategories);
+                            mFlashCards.setAdapter(adapter);
+
+//                            for (FlashCard mCards : )
+                    }
+                });
             }
         });
     }

@@ -50,11 +50,11 @@ public class FlashCardService {
             String jsonData = response.body().string();
             if (response.isSuccessful()) {
                 JSONObject quizletJSON = new JSONObject(jsonData);
-                JSONArray vocabJSON = quizletJSON.getJSONArray("vocab");
+                JSONArray vocabJSON = quizletJSON.getJSONArray("terms");
                 for (int i = 0; i < vocabJSON.length(); i++) {
                     JSONObject cardJSON = vocabJSON.getJSONObject(i);
                     String term = cardJSON.getString("term");
-                    String definition = cardJSON.getString("defintion");
+                    String definition = cardJSON.getString("definition");
                     String rank = cardJSON.getString("rank");
 
                     FlashCard card = new FlashCard(term, definition, rank);
