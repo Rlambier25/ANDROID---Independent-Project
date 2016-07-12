@@ -4,50 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="130dp"
-        android:layout_height="100dp"
-        android:id="@+id/restaurantImageView"
-        android:scaleType="centerCrop"/>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:background="#ffffff"
         android:layout_height="match_parent"
-        android:padding="10dp">
-<!--leaving off here. Need ot fix layout for flashcards-->
+        android:padding="110dp"
+        android:textAlignment="center">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/restaurantNameTextView"
-            android:textSize="20dp"
+            android:id="@+id/flashCards"
+            android:textSize="30sp"
             android:textStyle="bold"
-            android:text="Restaurant Name"
+            android:text="Flashcard Title"
+            android:textAlignment="center"
             android:textColor="@color/colorPrimary"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Description"
-            android:id="@+id/categoryTextView"
-            android:layout_below="@+id/descriptionNameTextView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textStyle="italic"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Flip me over"-->
+            <!--android:id="@+id/categoryTextView"-->
+            <!--android:layout_below="@+id/descriptionNameTextView"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:textStyle="italic"/>-->
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rank"
-                android:id="@+id/rankTextView"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:textColor="@color/colorAccent"/>
-        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

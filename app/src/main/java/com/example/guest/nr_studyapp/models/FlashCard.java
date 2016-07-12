@@ -1,4 +1,4 @@
-package com.example.guest.nr_studyapp;
+package com.example.guest.nr_studyapp.models;
 
 /**
  * Created by Guest on 7/8/16.
